@@ -1,6 +1,8 @@
 import 'package:busquedas/services/country_services.dart';
 import 'package:flutter/material.dart';
 
+import 'models/country.dart';
+
 class CountrySearchDelegate extends SearchDelegate {
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -30,11 +32,11 @@ class CountrySearchDelegate extends SearchDelegate {
     //print(query);
     final countryService = CountryService();
 
-    return FutureBuilder(
-        future: countryService.getCountryByName("peru"),
-        builder: (BuildContext context, AsyncSnapshot snap) {
+    return FutureBuilder<CountryModelResponse?>(
+        future: countryService.getCountryByName(query),
+        builder: (context, snap) {
           if (snap.hasData) {
-            return const Text("Tenemos algo aqui");
+            return Text("data");
           }
           return const Center(child: CircularProgressIndicator());
         });

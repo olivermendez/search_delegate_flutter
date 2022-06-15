@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Aprendiendo Search Delegate"),
+            const Text("Aprendiendo Search Delegate"),
             MaterialButton(
               color: Colors.blue,
               onPressed: () {
